@@ -12,7 +12,7 @@ mkdir -p "${WORK_DIR}"
 if [[ "$(uname)" != "Darwin" ]]; then
     OPTS="--gpus=all"
 else
-    OPTS="-e USE_GPU=OFF"
+    OPTS=""
 fi
 
 docker run \
