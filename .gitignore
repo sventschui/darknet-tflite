@@ -1,0 +1,3 @@
+work/*
+!work/functions
+__pycache__

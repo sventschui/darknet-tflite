@@ -1,0 +1,8 @@
+{
+  "contentDir": "/content",
+  "datalabRoot": "",
+  "jupyterArgs": ["--debug", "--NotebookApp.token='supersecret'"],
+  "nextJupyterPort": 9000,
+  "serverHost": "",
+  "serverPort": 8080
+}
