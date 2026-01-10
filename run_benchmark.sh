@@ -23,7 +23,7 @@ if [[ "$USER" != "" ]]; then
 fi
 
 ssh "${REMOTE}" "mkdir -p '${REMOTE_WORKDIR}'"
-rsync -avz --progress benchmark/ functions/ darknet.py requirements.txt --exclude 'benchmark/out' "${REMOTE}:${REMOTE_WORKDIR}/"
+rsync -avz --progress benchmark functions darknet.py requirements.txt --exclude 'benchmark/out' "${REMOTE}:${REMOTE_WORKDIR}/"
 ssh "${REMOTE}" "cd '${REMOTE_WORKDIR}' && wget --no-clobber https://codeberg.org/CCodeRun/darknet/raw/branch/master/src-python/darknet.py"
 
 # ===============================

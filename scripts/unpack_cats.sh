@@ -19,4 +19,4 @@ sed -i "s|/content/Cats|"${TARGET_DIR}"|" "${TARGET_DIR}"/Cats.data
 
 # Create train.txt with sample images (for demonstration)
 find "${TARGET_DIR}/set_01" -name "*.jpg" > "${TARGET_DIR}/Cats_train.txt"
-cp "${TARGET_DIR}/Cats_train.txt" "${TARGET_DIR}/Cat_valid.txt"
+cp "${TARGET_DIR}/Cats_train.txt" "${TARGET_DIR}/Cats_valid.txt"
