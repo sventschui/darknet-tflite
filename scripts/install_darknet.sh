@@ -17,6 +17,4 @@ arch="$(dpkg --print-architecture)"
 deb_file="darknet-${DARKNET_VERSION}-Linux-${arch}-${cpu_gpu}.deb"
 deb_path="/content/darknet_tflite/packages/${deb_file}"
 
-apt-get install -y libopencv-core4.5d || apt --fix-broken install
-
-sudo dpkg -i "$deb_path"
+sudo dpkg -i "$deb_path" || apt --fix-broken install
