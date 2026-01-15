@@ -18,5 +18,14 @@ cp /content/darknet_tflite/nn/Cats/{Cats.cfg,Cats.names,Cats.data} "${TARGET_DIR
 sed -i "s|/content/Cats|"${TARGET_DIR}"|" "${TARGET_DIR}"/Cats.data 
 
 # Create train.txt with sample images (for demonstration)
-find "${TARGET_DIR}/set_01" -name "*.jpg" > "${TARGET_DIR}/Cats_train.txt"
-cp "${TARGET_DIR}/Cats_train.txt" "${TARGET_DIR}/Cats_valid.txt"
+find "${TARGET_DIR}/set_01" -name "*.jpg" | awk '
+{ lines[NR]=$0 }
+END {
+  cutoff = int(NR * 0.8)
+  for (i=1; i<=NR; i++) {
+    if (i <= cutoff)
+      print lines[i] > "'"${TARGET_DIR}"'/Cats_train.txt"
+    else
+      print lines[i] > "'"${TARGET_DIR}"'/Cats_valid.txt"
+  }
+}' 

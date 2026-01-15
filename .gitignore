@@ -1,3 +1,4 @@
 work/*
 !work/functions
 __pycache__
+nn/Cats/set_01/

@@ -7,5 +7,5 @@ onnxruntime==1.23.2
 onnxsim-prebuilt==0.4.36.post1
 opencv-python==4.12.0.88
 sng4onnx==1.0.4
-tensorflow==2.19.1
+tensorflow==2.19.0
 tf-keras==2.19.0
