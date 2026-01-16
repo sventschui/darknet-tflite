@@ -17,8 +17,11 @@ else
     *T4*)
         gpu_class="T4"
         ;;
-    *L4*|*A100*|*H100*)
+    *L4*)
         gpu_class="L4"
+        ;;
+    *A100*)
+        gpu_class="A100"
         ;;
     *)
         echo "Unsupported GPU: $gpu_name"
