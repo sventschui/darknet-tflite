@@ -11,7 +11,8 @@ fi
 if [[ ! -d '/usr/lib64-nvidia' ]]; then
     cpu_gpu="cpu"
 else
-    cpu_gpu="gpu"
+    gpu_name="$(nvidia-smi --query-gpu=name --format=csv,noheader | sed 's|NVIDIA\s*||' | sed 's|\s\s*|-|g')"
+    cpu_gpu="gpu-${gpu_name}"
 fi
 arch="$(dpkg --print-architecture)"
 deb_file="darknet-${DARKNET_VERSION}-Linux-${arch}-${cpu_gpu}.deb"
