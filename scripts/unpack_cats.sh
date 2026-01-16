@@ -13,7 +13,7 @@ rm -rf "${TARGET_DIR}"
 mkdir -p "${TARGET_DIR}"
 
 unzip -q -o /content/darknet_tflite/nn/Cats/set_01.zip -d "${TARGET_DIR}"
-cp /content/darknet_tflite/nn/Cats/{Cats.cfg,Cats.names,Cats.data} "${TARGET_DIR}"
+cp /content/darknet_tflite/nn/Cats/{Cats*.cfg,Cats.names,Cats.data} "${TARGET_DIR}"
 
 sed -i "s|/content/Cats|"${TARGET_DIR}"|" "${TARGET_DIR}"/Cats.data 
 
